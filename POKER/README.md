@@ -1,4 +1,4 @@
 Poker Hands Kata
 ================
 
-My first kata on the poker hands problem
+Comes with a nice MVC UI!
