@@ -1,0 +1,63 @@
+﻿@using PokerHandsKata
+@model K3.WebFront.Controllers.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+        
+    }
+
+     li {
+         padding: 0;
+         margin: 0;
+         list-style: none;
+         float: left;
+     }
+</style>
+
+<h2>K3</h2>
+
+<fieldset>
+    <legend>Deck</legend>
+    @foreach (var card in Model.Deck.Cards)
+    {
+        <deck>@card.ToString().ToLowerInvariant()</deck>
+    }
+</fieldset>
+
+<div style="float:right;"><img src="./Content/tony.png" /></div>
+
+<br/>
+
+@foreach (var hand in Model.Hands)
+{
+    <div>Player has : @PokerGame.GetScore(hand)</div>
+    <ul>
+    @foreach (var card in hand.Cards)
+    {
+        <li><deck>@card.ToString().ToLowerInvariant()</deck>@* - @card.NumberValue*@</li>
+    }
+    </ul>
+}
+
+<br/>
+<center>
+    <h2>Winner hand : </h2>
+    
+   @{
+       var winnerHand = PokerGame.GetWinnerHand(Model.Hands);
+       <ul>
+            @foreach (var card in winnerHand.Cards)
+            {
+                <li><deck>@card.ToString().ToLowerInvariant()</deck>@* - @card.NumberValue*@</li>
+            }
+        </ul>
+   } 
+</center>

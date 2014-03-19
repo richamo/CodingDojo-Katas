@@ -1,0 +1,27 @@
+﻿@using System.Web.Script.Services
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            background-color: rgb(0, 0, 0);
+            background-image: url("./Content/evpBack2.jpg");
+            background-repeat: no-repeat;
+            background-position: center top;
+            color: white;
+            background-attachment: fixed;
+        }
+
+    </style>
+
+    <script src="@Url.Content("~/Scripts/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jscards-0.2-min.js")" type="text/javascript"></script>
+    
+</head>
+
+<body>
+        @RenderBody()
+</body>
+</html>
